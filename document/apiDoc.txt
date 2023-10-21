@@ -1,0 +1,103 @@
+1. reading the application required details from input json file 
+2. if any value is missing then applicaiton will through error like required field is missing 
+    ex : Error:Field validation for 'SQL_DATABASE' failed on the 'required' tag
+
+3. storing the json file information into one global object 
+4. once details are stored into object then creating the db connection
+5. If db connection fails then exiting the applicaiton
+
+6. If db is connected successfully starting the http server 
+7. also using the safe exit when cntl+c signal came and closing the db connection
+
+
+8. User Registration is expecting the input as below object
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"saisrim1@gmail.com",
+  "password":"SaiSri#123" 
+
+}
+
+pwd : validations
+//expecting password length > 7 
+//one lower case character
+//one upper case character
+//one digit 
+//one special character
+
+email validation : using third party expecting @ symbol in the email 
+
+username/firstname/lastname are expecting at least one character validation 
+
+9.   http://localhost:9009/userRegistration
+
+Once the payload is having proper information then checking the user email already exist or not 
+
+input :
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"saisrim1@gmail.com",
+  "password":"SaiSri#123" 
+
+}
+
+
+output: 
+
+if already exist providing below responce
+1. 
+
+{
+  "TransactionID": "1697884061144",
+  "message": "User Email already exists."
+}
+
+else creating the user , providing below responce 
+
+2. 
+{
+  "TransactionID": "1697884084553",
+  "message": "A verification mail has been sent to your registered mail."
+}
+
+10 . http://localhost:9009/userLogin
+
+
+validating the email 
+
+
+input: 
+
+{
+   "email":"saisrim@gmail.com",
+  "password":"SaiSri#123"
+}
+
+
+output: 
+
+1. if user is valid
+{
+  "TransactionID": "1697884157065",
+  "token": "7fc5fd95-11fa-4eb6-aa8a-d811c8bbe679",
+  "user": {
+    "email": "saisrim@gmail.com",
+    "firstname": "sai",
+    "iID": 18,
+    "lastname": "sri",
+    "username": "saisri"
+  }
+}
+
+2. invalid user 
+
+{
+  "TransactionID": "1697884263019",
+  "message": "User not found with the given email and password"
+}

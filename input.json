@@ -1,0 +1,36 @@
+{
+    "SQL_CONNECTION":{
+        "SQL_HOST": "host",
+        "SQL_PASSWORD": "pwd",
+        "SQL_USERNAME": "username",
+        "SQL_PORT": "5432",
+        "SQL_DATABASE": "dbname",
+        "SQL_TABLE": "sampleUsers",
+        "SQL_DRIVER_NAME": "postgres",
+        "TLS_ENABLED": false,
+        "SQL_SSL_MODE": "disable",
+        "SQL_RETRY_COUNT": 3,
+        "SQL_DELAY_TIME": 1
+    },
+    "APP_CONFIG":{
+        "PORT":":9009",
+        "LOG_PATH":"/DISK01/saisri/src/sample_api/log_files",
+        "LOG_FILE_NAME":"sample_api", 
+        "APP_NAME":"sample_api",
+        "LOG_LEVEL":"debug"    
+    },
+    "QUERY_CONFIG":{
+        "FETCH_USER_BY_EMAIL": {
+            "QUERY": "select * from public.\"sampleUsers\" where \"email\" = $1",
+            "TIME_OUT_SEC": 5
+        },
+        "LOGIN_UESR_QUERY": {
+            "QUERY": "select * from public.\"sampleUsers\" where \"email\" = $1 and \"password\" = $2",
+            "TIME_OUT_SEC": 5
+        },
+        "CREATE_USER": {
+            "QUERY": "INSERT INTO public.\"sampleUsers\"(\"email\",\"username\",\"firstname\",\"lastname\",\"password\") VALUES ($1,$2,$3,$4,$5)",
+            "TIME_OUT_SEC": 10
+        }
+    }
+}
