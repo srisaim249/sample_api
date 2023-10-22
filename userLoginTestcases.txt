@@ -1,0 +1,68 @@
+1. when email is empty
+{
+   "email":"",
+  "password":""
+}
+output : 
+{
+  "TransactionID": "1697951652028",
+  "message": "please provide valid email"
+}
+
+
+2. when invalid email given 
+{
+   "email":"saisri#gmail.com",
+  "password":""
+}
+
+output : 
+{
+  "TransactionID": "1697951652028",
+  "message": "please provide valid email"
+}
+
+3. when password is empty
+{
+   "email":"saisri@gmail.com",
+  "password":""
+}
+
+output:
+{
+  "TransactionID": "1697951736296",
+  "message": "please provide password"
+}
+
+4. when invalid password given
+{
+   "email":"saisri@gmail.com",
+  "password":"SaiSri@13"
+}
+
+output : 
+{
+  "TransactionID": "1697951781662",
+  "message": "User not found with the given email and password"
+}
+
+5. valid details given 
+
+{
+   "email":"saisri@gmail.com",
+  "password":"SaiSri@123"
+}
+
+output : 
+
+{
+  "TransactionID": "1697951798742",
+  "token": "497c7a83-0cb4-47ca-8843-e8ee02750d86",
+  "user": {
+    "email": "saisri@gmail.com",
+    "firstname": "sai",
+    "iID": 21,
+    "lastname": "sri",
+    "username": "saisri"
+  }
+}

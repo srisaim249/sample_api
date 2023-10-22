@@ -1,0 +1,189 @@
+1. Invalid input given 
+
+input : 
+{
+  "username":"",
+  "firstname":"",
+  "lastname":"",
+  "email":"",
+  "password":""
+}
+
+output : 
+{
+  "TransactionID": "1697950753879",
+  "message": "please provide your firstname"
+}
+
+2. when lastname is empty 
+
+{
+  "username":"",
+  "firstname":"sai",
+  "lastname":"",
+  "email":"",
+  "password":""
+}
+
+output : 
+
+{
+  "TransactionID": "1697950825945",
+  "message": "please provide your lastname"
+}
+
+
+3. when username is empty 
+
+{
+  "username":"",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"",
+  "password":""
+}
+
+output : 
+
+{
+  "TransactionID": "1697950847821",
+  "message": "please provide your username"
+}
+
+
+4. when password is empty 
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"",
+  "password":""
+}
+
+output : 
+
+{
+  "TransactionID": "1697950880278",
+  "message": "please provide password with a digit,1-lowercase,1-uppercase,1-special character and length should be greater than 7 characters"
+}
+
+
+5. when password is dont have digit
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"",
+  "password":"Sai"
+}
+
+output : 
+
+{
+  "TransactionID": "1697950880278",
+  "message": "please provide password with a digit,1-lowercase,1-uppercase,1-special character and length should be greater than 7 characters"
+}
+
+6. when password is dont have special character
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"",
+  "password":"Sai123"
+}
+
+output : 
+
+{
+  "TransactionID": "1697950880278",
+  "message": "please provide password with a digit,1-lowercase,1-uppercase,1-special character and length should be greater than 7 characters"
+}
+
+7. when email is empty
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"",
+  "password":"SaiSri@123"
+}
+
+output : 
+
+{
+  "TransactionID": "1697950962332",
+  "message": "please provide valid email"
+}
+
+8. when email is invalid
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"saisri",
+  "password":"SaiSri@123"
+}
+
+output : 
+
+{
+  "TransactionID": "1697950987005",
+  "message": "please provide valid email"
+}
+
+9.when email is @ symbol is not given
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"saisri#gmail.com",
+  "password":"SaiSri@123"
+}
+
+output : 
+
+{
+  "TransactionID": "1697950987005",
+  "message": "please provide valid email"
+}
+
+10. when payload is valid 
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"saisri@gmail.com",
+  "password":"SaiSri@123"
+}
+
+output : 
+
+{
+  "TransactionID": "1697951032293",
+  "message": "A verification mail has been sent to your registered mail."
+}
+
+11. same user trying to register
+
+{
+  "username":"saisri",
+  "firstname":"sai",
+  "lastname":"sri",
+  "email":"saisri@gmail.com",
+  "password":"SaiSri@123"
+}
+
+output : 
+
+{
+  "TransactionID": "1697951314986",
+  "message": "User Email already exists."
+}
